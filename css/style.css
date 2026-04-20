@@ -862,6 +862,22 @@ h1, h2, h3, h4, h5, h6{
   margin-bottom: 1rem;
 }
 
+.mt-0{
+  margin-top: 0px;
+}
+
+.mt-\[-10px\]{
+  margin-top: -10px;
+}
+
+.mt-\[-20px\]{
+  margin-top: -20px;
+}
+
+.mt-\[-30px\]{
+  margin-top: -30px;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -963,6 +979,10 @@ h1, h2, h3, h4, h5, h6{
 
 .h-10{
   height: 2.5rem;
+}
+
+.h-1{
+  height: 0.25rem;
 }
 
 .w-10{

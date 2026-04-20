@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Network Monitor</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+    <header class="glass m-10 rounded-3xl py-7 z-50 sticky top-10 flex justify-between mb-4">
+        <div class="ml-5">
+            <h1 class="text-2xl uppercase">
+                <a href="index.html">Network Monitor</a>
+            </h1>
+            <h2 class="uppercase">
+                Created by 
+                <a class="text-brand-red link" href="https://github.com/leonardosalasd" target="_blank">
+                    Leonardo Salas
+                </a>
+            </h2>
+        </div>
+        <div class="mr-5 mt-2">
+            <figure>
+                <a href="https://github.com/sponsors/leonardosalasd" target="_blank">
+                    <svg class="w-10 h-10 text-white animate-pulse hover:text-brand-red transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3"/>
+                    </svg>
+                </a>
+                <figcaption class="sr-only">Animated Heart</figcaption>
+            </figure>
+        </div>
+    </header>
+
+    <main>
+        <!-- Run Diagnostic -->
+        <section id="run-diagnostic" class="flex card cursor-pointer gap-x-4 gap-y-10 ml-10 mr-10 mx-0 items-center justify-center" tabindex="0">
+            <h1 class="uppercase text-3xl ml-5">Run Diagnostic</h1>
+            <figure>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z"/>
+                </svg>
+                <figcaption class="sr-only">Play Icon</figcaption>
+            </figure>
+        </section>
+        <!-- Cards | Info -->
+        <section class="m-10 grid grid-cols-1 md:grid-cols-3 gap-x-16">
+            <div class="card flex justify-between mb-10">
+                <div class="ml-5 mr-5">
+                    <h1 class="font-montserrat uppercase">Latency</h1>
+                    <h2 class="text-6xl font-bold text-brand-red"><span id="latency-val">-</span><span class="text-xl text-white">ms</span></h2>
+                </div>
+                <figure id="network-icon" class="mr-5 mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 36 36">
+                        <path fill="currentColor" d="M23.43 16.83A1 1 0 0 0 22 18.24L25.72 22H7.83a1 1 0 0 0 0 2h17.89L22 27.7a1 1 0 1 0 1.42 1.41L29.53 23Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M13.24 18.45a1 1 0 0 0 .71-1.71L10.24 13h17.88a1 1 0 0 0 0-2H10.24l3.71-3.73a1 1 0 0 0-1.42-1.41L6.42 12l6.11 6.14a1 1 0 0 0 .71.31" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/>
+                    </svg>
+                    <figcaption class="sr-only">Arrows Icon</figcaption>
+                </figure>
+            </div>
+
+            <div class="card flex justify-between mb-10">
+                <div class="ml-5 mr-5">
+                    <h1 class="font-montserrat uppercase">Stability</h1>
+                    <h2 class="text-6xl font-bold text-brand-red"><span id="stability-val">-</span><span class="text-xl text-white">ms</span></h2>
+                </div>
+                <figure class="mr-5 mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd">
+                        <path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/>
+                        <path fill="currentColor" d="M20 3.5A1.5 1.5 0 0 1 21.5 5v14a1.5 1.5 0 0 1-3 0V5A1.5 1.5 0 0 1 20 3.5m-4 3A1.5 1.5 0 0 1 17.5 8v11a1.5 1.5 0 0 1-3 0V8A1.5 1.5 0 0 1 16 6.5m-4 3a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-3 0v-8A1.5 1.5 0 0 1 12 9.5m-4 3A1.5 1.5 0 0 1 9.5 14v5a1.5 1.5 0 0 1-3 0v-5A1.5 1.5 0 0 1 8 12.5m-4 3A1.5 1.5 0 0 1 5.5 17v2a1.5 1.5 0 0 1-3 0v-2A1.5 1.5 0 0 1 4 15.5"/></g>
+                    </svg>
+                    <figcaption class="sr-only">Network Icon</figcaption>
+                </figure>
+            </div>
+
+            <div class="card flex justify-between mb-10">
+                <div class="ml-5 mr-5">
+                    <h1 class="font-montserrat uppercase">Speed</h1>
+                    <h2 class="text-6xl font-bold text-white">~<span id="speed-val" class="text-brand-red">-</span><span class="text-xl text-white"> Mbps</span></h2>
+                </div>
+                <figure class="mr-5 mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 16.088q.95-.013 1.4-.688L19 7l-8.4 5.6q-.675.45-.712 1.375t.562 1.525t1.55.588M12 4q1.475 0 2.838.413T17.4 5.65l-1.9 1.2q-.825-.425-1.712-.637T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.9-.213-1.75t-.637-1.65l1.2-1.9q.75 1.175 1.188 2.5T22 13.85t-.325 2.725t-1.025 2.475q-.275.45-.75.7t-1 .25H5.1q-.525 0-1-.25t-.75-.7q-.65-1.125-1-2.387T2 14q0-2.075.788-3.887t2.15-3.175t3.187-2.15T12 4m.175 7.825"/>
+                    </svg>
+                    <figcaption class="sr-only">Speed Icon</figcaption>
+                </figure>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/core/monitor.js"></script>
 </body>
 </html>

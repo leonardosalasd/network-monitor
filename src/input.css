@@ -6,10 +6,26 @@
 
 @layer base {
     body {
-        @apply bg-brand-black text-white antialiased font-montserrat;
+        @apply text-white antialiased font-montserrat bg-gradient-to-r from-[#121212] to-[#333333];
     }
     
     h1, h2, h3, h4, h5, h6 {
         @apply font-poppins font-semibold;
+    }
+    /* Glassmorphism Effect */
+    .glass {
+        @apply bg-white/[0.10] backdrop-blur-md shadow-lg border border-white/10;
+    }
+    /* Links Effects */
+    .link {
+        @apply relative after:content-[''] after:absolute after:left-0 after:bottom-0
+                after:w-full after:h-[2px] after:bg-current
+                after:scale-x-0 after:origin-center
+                after:transition hover:after:scale-x-100;
+    }
+    /* Info | Cards */
+    .card {
+        @apply bg-white/[0.05] backdrop-blur-md shadow-lg border border-white/10 rounded-3xl py-7 px-3
+        transition-transform duration-300 hover:scale-105;
     }
 }
